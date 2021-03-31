@@ -43,6 +43,11 @@ class App extends Component {
               </a>
               .
             </li>
+            <li>
+              Once finished, create a pull request to master branch
+              https://github.com/klis87/react-test , so that your work could be
+              reviewed on github.
+            </li>
           </ol>
         </div>
       </div>
