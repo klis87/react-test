@@ -3,7 +3,7 @@
 :root {
   --col-accent: #fcbb6d;
   --col-accent2: #d8737f;
-  --col-accent3: #ab6c82;
+  --col-accent3: #ADD8E6;
   --col-dark-main: #475c7a;
   --col-dark-helper: #685D79;
   --col-light-main: #373633;
@@ -74,5 +74,13 @@ ul {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   margin-top: 10px;
+
+  display: flex;
 }
 
+
+.task-completed h3, 
+.task-completed p {
+  /* color: var(--col-dark-main); */
+  text-decoration: line-through;
+}

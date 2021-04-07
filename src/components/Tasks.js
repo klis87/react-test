@@ -4,7 +4,7 @@ import Task from './Task';
 
 const Tasks = () => {
 
-    const tasks = useContext(TodoContext)
+    const {tasks} = useContext(TodoContext);
 
     return (
         <ul>
