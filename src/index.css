@@ -78,9 +78,65 @@ ul {
   display: flex;
 }
 
+.tasks__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks__header div {
+  font-size: 30px;
+  color: var(--col-accent);
+  cursor: pointer;
+}
+
+.tasks__header div {
+  font-size: 30px;
+  color: var(--col-accent);
+  cursor: pointer;
+}
 
 .task-completed h3, 
 .task-completed p {
   /* color: var(--col-dark-main); */
   text-decoration: line-through;
+}
+
+.task__add-new {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: var(--col-accent3);
+  color: var(--col-light-main);
+  border-radius: 5px;
+}
+
+.taks__input-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.task__input-field {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border: none;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.btn.btn-submit {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--col-light-main);
+  color: var(--col-accent);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Roboto';
 }
