@@ -1,5 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,900;1,900&display=swap');
+
+:root {
+  --col-accent: #fcbb6d;
+  --col-accent2: #d8737f;
+  --col-accent3: #ab6c82;
+  --col-dark-main: #475c7a;
+  --col-dark-helper: #685D79;
+  --col-light-main: #373633;
+  --col-background: #efede7;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
+
+body li {
+  margin-top: 5px;
+}
+
+h1, h2, h3 {
+  color: var(--col-accent);
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.solution__container {
+  font-weight: 500;
+  width: 100wv;
+  min-height: 60vh;
+  padding: 20px;
+
+  background-color: var(--col-background);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tasks__container {
+  box-sizing: border-box;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
+  background-color: var(--col-light-main);
+  color: var(--col-background);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.task__contanier {
+  box-sizing: border-box;
+  background-color: var(--col-dark-main);
+  padding: 10px;
+
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+  margin-top: 10px;
+}
+
