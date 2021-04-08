@@ -8,10 +8,7 @@ import '../index.css'
 const TodoAppSolution = () => {
     const [ addNewTaskDisplay, setAddNewPanelDisplay ] = useState(false);
 
-    let change = () => {
-        setAddNewPanelDisplay(!addNewTaskDisplay)
-        console.log(addNewTaskDisplay)
-    }
+
     return (
         <TodoContextProvider>
             <div className="solution__container">
@@ -19,7 +16,7 @@ const TodoAppSolution = () => {
                 <div className='tasks__container'>
                     <header className='tasks__header'>
                         <h1>todo list</h1>
-                        <div onClick={change}>+</div>
+                        <div onClick={() => setAddNewPanelDisplay(!addNewTaskDisplay)}>+</div>
                     </header>
                     {addNewTaskDisplay && <AddNewTaskPanel />}
                     <Tasks/>

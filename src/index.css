@@ -77,6 +77,7 @@ ul {
   margin-top: 10px;
 
   display: flex;
+  align-items: center;
 }
 
 .tasks__header {
@@ -113,8 +114,8 @@ ul {
 
 .taks__input-label {
   display: block;
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 500;
   margin-top: 10px;
   margin-bottom: 5px;
 }
@@ -123,9 +124,14 @@ ul {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  border: none;
-  padding: 4px;
-  border-radius: 3px;
+  padding: 8px 4px;
+  outline: none;
+  border: 2px solid transparent;
+}
+
+.task__input-field:focus {
+  outline: none;
+  border-color: var(--col-accent2);
 }
 
 .btn.btn-submit {
@@ -147,4 +153,45 @@ ul {
   font-size: 10px;
   height: 12px;
   padding-top: 4px;
+}
+
+.delete-icon {
+  height: 20px;
+  width: 20px;
+  display: block;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}
+
+.task__checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  height: 35px;
+  width: 35px;
+  outline: none;
+  background-color: var(--col-dark-main);
+  border: 2px solid var(--col-accent);
+  margin-right: 10px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task__checkbox:checked {
+  background-color: var(--col-accent);
+}
+
+.task__checkbox:checked::after {
+  display: block;
+  content:'';
+  background-image: url('./assets/check.svg');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
 }
