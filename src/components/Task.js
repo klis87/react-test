@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { TodoContext } from './TodoContext'
+import { Draggable } from 'react-beautiful-dnd';
 
+import { TodoContext } from './TodoContext'
 import trash from '../assets/delete.svg'
 
 const Task = ({task}) => {
@@ -12,7 +13,7 @@ const Task = ({task}) => {
             <div>
                 <input 
                     className='task__checkbox'
-                    type="checkbox"
+                    type='checkbox'
                     value={task.completed}
                     checked={task.completed}
                     onChange = {() => changeTaskStatus(task.id)}
@@ -26,13 +27,12 @@ const Task = ({task}) => {
                 <div className='delete-icon'>
                     <img 
                         src={trash} 
-                        alt="Trash icon"
+                        alt='Trash icon'
                         onClick={() => deleteTask(task.id)}
                     />
                 </div>
             }
         </li>
-    )
-}
+)}
 
 export default Task

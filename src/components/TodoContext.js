@@ -21,6 +21,13 @@ const TodoContextProvider = (props) => {
         )
     }
 
+    const reorderTasks = (from, to) => {
+        const newTasksArray = Array.from(tasks);
+        newTasksArray.splice(from, 1);
+        newTasksArray.splice(to, 0, tasks[from]);
+        setTasks(newTasksArray);
+    }
+
     const addTask = (title, description) => {
         const newTask = {
             id: uuidv4(),
@@ -38,7 +45,7 @@ const TodoContextProvider = (props) => {
     }
 
     return (
-        <TodoContext.Provider value={{tasks, addTask, changeTaskStatus, deleteTask}}>
+        <TodoContext.Provider value={{tasks, addTask, changeTaskStatus, deleteTask, reorderTasks}}>
             { props.children }
         </TodoContext.Provider>
     )

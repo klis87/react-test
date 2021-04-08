@@ -6,7 +6,7 @@ const Input = ({label, value, placeholder, onChange}) => {
             <label className='taks__input-label'>{label}</label>
             <input 
                 className='task__input-field'
-                type="text"
+                type='text'
                 value={value}
                 placeholder={placeholder}
                 onChange={onChange}

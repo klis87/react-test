@@ -56,14 +56,14 @@ const AddNewTaskPanel = () => {
                     placeholder='Title of your task'
                     onChange={event => titleChange(event.target.value.toString())}
                 />
-                <div className="error-msg">{titleErrorMessage}</div>
+                <div className='error-msg'>{titleErrorMessage}</div>
                 <Input 
                     label='description'
                     value={description}
                     placeholder='Description of your task'
                     onChange={event => descriptionChange(event.target.value.toString())}
                 />
-                <div className="error-msg">{descriptionErrorMessage}</div>
+                <div className='error-msg'>{descriptionErrorMessage}</div>
                 <input 
                     className='btn btn-submit'
                     type='submit' 
