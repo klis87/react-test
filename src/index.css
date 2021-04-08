@@ -8,6 +8,7 @@
   --col-dark-helper: #685D79;
   --col-light-main: #373633;
   --col-background: #efede7;
+  --col-error: #AF2529;
 }
 
 body {
@@ -139,4 +140,11 @@ ul {
   font-weight: 500;
   font-size: 14px;
   font-family: 'Roboto';
+}
+
+.error-msg {
+  color: var(--col-error);
+  font-size: 10px;
+  height: 12px;
+  padding-top: 4px;
 }

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import Input from './Input'
 import { TodoContext } from './TodoContext';
 
@@ -7,17 +7,44 @@ const AddNewPanel = () => {
     const {addTask} = useContext(TodoContext);
 
     const [title, setTitle] = useState('');
+    const [titleErrorMessage, setTitleErrorMessage] = useState('');
+
     const [description, setDescription] = useState('');
+    const [descriptionErrorMessage, setDescriptionErrorMessage] = useState('');
 
     const submitForm = e => {
         e.preventDefault();
-        // if (title.trim().length < 1 || description.trim().length < 1 ) {
-        //     alert('Please provide proper title and description')
-        //     return;
-        // };
-        addTask(title, description);
-        setTitle('');
-        setDescription('');
+        if (validate(title) && validate(description)) {
+            addTask(title, description);
+            setTitle('');
+            setDescription('');
+        } else {
+            titleChange(title);
+            descriptionChange(description);
+        }
+    }
+
+    const titleChange = string => {
+        setTitle(string);
+        if (!validate(string)) {
+            setTitleErrorMessage('please provide title')
+        } else {
+            setTitleErrorMessage('')
+        }
+    }
+
+    const descriptionChange = string => {
+        setDescription(string);
+        if (!validate(string)) {
+            setDescriptionErrorMessage('please provide description')
+        } else {
+            setDescriptionErrorMessage('')
+        }
+    }
+
+    const validate = (string) => {
+        if (string.trim().length > 0 ) return true;
+        return false;
     }
 
     return (
@@ -26,18 +53,22 @@ const AddNewPanel = () => {
                 label='title' 
                 value={title}
                 placeholder='Title of your task'
-                onChange={e => setTitle(e.target.value)}
+                onChange={event => titleChange(event.target.value)}
             />
+            <div className="error-msg">{titleErrorMessage}</div>
             <Input 
                 label='description'
                 value={description}
                 placeholder='Description of your task'
-                onChange={e => setDescription(e.target.value)} />
+                onChange={event => descriptionChange(event.target.value)}
+            />
+            <div className="error-msg">{descriptionErrorMessage}</div>
             <input 
                 class='btn btn-submit'
                 type='submit' 
                 value='add task'
             />
+
         </form>
     )
 }
