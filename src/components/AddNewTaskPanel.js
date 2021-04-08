@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import Input from './Input'
 import { TodoContext } from './TodoContext';
 
-const AddNewPanel = () => {
+const AddNewTaskPanel = () => {
 
     const {addTask} = useContext(TodoContext);
 
@@ -48,29 +48,31 @@ const AddNewPanel = () => {
     }
 
     return (
-        <form className='task__add-new' onSubmit={e => submitForm(e)}>
-            <Input 
-                label='title' 
-                value={title}
-                placeholder='Title of your task'
-                onChange={event => titleChange(event.target.value)}
-            />
-            <div className="error-msg">{titleErrorMessage}</div>
-            <Input 
-                label='description'
-                value={description}
-                placeholder='Description of your task'
-                onChange={event => descriptionChange(event.target.value)}
-            />
-            <div className="error-msg">{descriptionErrorMessage}</div>
-            <input 
-                class='btn btn-submit'
-                type='submit' 
-                value='add task'
-            />
+        <>
+            <form className='task__add-new' onSubmit={e => submitForm(e)}>
+                <Input 
+                    label='title' 
+                    value={title}
+                    placeholder='Title of your task'
+                    onChange={event => titleChange(event.target.value.toString())}
+                />
+                <div className="error-msg">{titleErrorMessage}</div>
+                <Input 
+                    label='description'
+                    value={description}
+                    placeholder='Description of your task'
+                    onChange={event => descriptionChange(event.target.value.toString())}
+                />
+                <div className="error-msg">{descriptionErrorMessage}</div>
+                <input 
+                    className='btn btn-submit'
+                    type='submit' 
+                    value='add task'
+                />
 
-        </form>
+            </form>
+        </>
     )
 }
 
-export default AddNewPanel
+export default AddNewTaskPanel
